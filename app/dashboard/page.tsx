@@ -59,42 +59,49 @@ type SkillLevel = 1 | 2 | 3 | 4 | 5;
 
 const languagesAndFrameworks: Readonly<{ name: string; level: SkillLevel }[]> = [
   { name: "C#", level: 5 },
-  { name: ".NET Framework", level: 5 },
-  { name: ".NET Core", level: 5 },
   { name: "VB.Net", level: 5 },
-  { name: "VB6", level: 3 },
+  { name: "VB6", level: 5 },
+  { name: "Java Spring Boot", level: 4 },
+  { name: "Java Quarkus", level: 4 },
   { name: "ASP.NET", level: 5 },
-  { name: "JavaScript", level: 5 },
-  { name: "HTML/CSS", level: 5 },
-  { name: "PHP", level: 3 },
-  { name: "CakePHP", level: 3 },
-  { name: "Joomla", level: 2 },
-  { name: "React", level: 5 },
+  { name: "Rust", level: 3 },
+  { name: "Go", level: 3 },
+  { name: "Python Django", level: 4 },
+  { name: "Python FastAPI", level: 4 },
+  { name: "JavaScript", level: 4 },
+  { name: "HTML/CSS", level: 4 },
+  { name: "React", level: 4 },
   { name: "Angular", level: 3 },
-  { name: "Java", level: 3 }
+  { name: ".NET Framework", level: 5 },
+  { name: ".NET Core", level: 4 },
+  { name: "PHP", level: 4 },
+  { name: "CakePHP", level: 4 },
+  { name: "Joomla", level: 4 }
 ];
 
 const architectureAndPatterns: Readonly<{ name: string; level: SkillLevel }[]> = [
-  { name: "DDD", level: 4 },
-  { name: "EDA", level: 3 },
+  { name: "MCP", level: 5 },
+  { name: "DDD", level: 3 },
+  { name: "EDA", level: 4 },
   { name: "Principios SOLID", level: 5 },
-  { name: "Microservicios", level: 4 },
-  { name: "REST", level: 5 },
-  { name: "SOAP", level: 4 }
+  { name: "Microservicios", level: 5 },
+  { name: "REST API", level: 5 },
+  { name: "N8N", level: 4 }
 ];
 
 const toolsAndCloud: Readonly<{ name: string; level: SkillLevel }[]> = [
-  { name: "Git", level: 5 },
-  { name: "T-SQL", level: 5 },
-  { name: "Team Foundation", level: 4 },
-  { name: "PL-SQL", level: 4 },
-  { name: "VMware", level: 3 },
-  { name: "SQL Server", level: 5 },
+  { name: "Git", level: 4 },
+  { name: "SQL Server", level: 4 },
+  { name: "MySQL", level: 4 },
+  { name: "PostgreSQL", level: 4 },
+  { name: "Oracle", level: 3 },
   { name: "Visual Studio", level: 5 },
   { name: "Visual Code", level: 5 },
-  { name: "Office365", level: 4 },
-  { name: "Kafka", level: 3 },
-  { name: "GCP", level: 2 }
+  { name: "Eclipse", level: 3 },
+  { name: "Office", level: 5 },
+  { name: "Kafka", level: 4 },
+  { name: "GCP", level: 4 },
+  { name: "Azure", level: 4 }
 ];
 
 const skills: Readonly<string[]> = [
@@ -112,26 +119,48 @@ const skills: Readonly<string[]> = [
   "Inglés Intermedio"
 ];
 
-const certifications: Readonly<{ name: string; provider: string; year: string }[]> = [
+const certifications: Readonly<{ name: string; platform: string; year: string; image?: string; url?: string }[]> = [
   {
-    name: "Desarrollador Full Stack",
-    provider: "Udemy",
-    year: "2024"
+    name: "Curso completo del lenguaje Rust",
+    platform: "Udemy",
+    year: "2026",
+    image: "/certificados-img/certificado-udemy.jpg",
+    url: "https://www.udemy.com/certificate/UC-0af66768-d0bc-4b13-96fa-6e84c6d3e5a2/"
   },
   {
-    name: "React - The Complete Guide",
-    provider: "Udemy",
-    year: "2024"
+    name: "Arquitectura Software Moderna: DDD, Eventos, Microservicios",
+    platform: "Udemy",
+    year: "2025",
+    image: "/certificados-img/certificado-udemy.jpg",
+    url: "https://www.udemy.com/certificate/UC-9f0d1fe1-13ae-4af6-ab6c-800b15435afc/"
   },
   {
-    name: "Advanced C# Programming",
-    provider: "Udemy",
-    year: "2023"
+    name: "Scrum Master Esencial: Fundamentos Sólidos y Efectivos",
+    platform: "Udemy",
+    year: "2021",
+    image: "/certificados-img/certificado-udemy.jpg",
+    url: "https://www.udemy.com/certificate/UC-b87679b3-71c8-4cac-855d-4464f4c1abc6/"
   },
   {
-    name: ".NET Core Microservices",
-    provider: "Udemy",
-    year: "2023"
+    name: "Monitor and Log with Google Cloud Operations Suite Skill Badge",
+    platform: "Google Cloud",
+    year: "2025",
+    image: "/certificados-img/certificado-udemy.jpg",
+    url: "https://www.credly.com/badges/fc1046ab-a565-4d8e-8442-74a6ea5fb953"
+  },
+  {
+    name: "Develop Serverless Apps with Firebase Skill Badge",
+    platform: "Google Cloud",
+    year: "2025",
+    image: "/certificados-img/certificado-udemy.jpg",
+    url: "https://www.credly.com/badges/508a147b-1078-41f6-901d-447391b32257"
+  },
+  {
+    name: "Develop Serverless Applications on Cloud Run Skill Badge",
+    platform: "Google Cloud",
+    year: "2025",
+    image: "/certificados-img/certificado-udemy.jpg",
+    url: "https://www.credly.com/badges/5c33bd68-5302-4062-8594-6dd264a48c10"
   }
 ];
 
@@ -426,28 +455,51 @@ export default function Dashboard() {
         </div>
 
         {/* Certifications */}
-        <div className="bg-white dark:bg-dark rounded-xl border border-border dark:border-darkborder p-6 mt-6">
-          <h2 className="text-lg font-semibold text-dark dark:text-white mb-4">
+        <div className="mt-10">
+          <h2 className="text-lg font-semibold text-dark dark:text-white mb-6">
             Certificaciones
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
-              <div 
+              <a 
                 key={index}
-                className="flex items-center gap-4 p-4 bg-lightgray dark:bg-white/5 rounded-lg"
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-white dark:bg-dark rounded-xl border border-border dark:border-darkborder overflow-hidden hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Icon icon="solar:certificate-bold" className="text-primary" width={24} />
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 flex items-center justify-center relative overflow-hidden p-2">
+                  {cert.image ? (
+                    <Image
+                      src={cert.image}
+                      alt={cert.name}
+                      width={200}
+                      height={150}
+                      className="object-contain rounded-lg"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.1)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]"></div>
+                      <div className="w-16 h-12 bg-white dark:bg-dark rounded shadow-lg flex items-center justify-center transform rotate-[-5deg] group-hover:rotate-0 transition-transform duration-300">
+                        <Icon icon="solar:certificate-bold" className="text-primary" width={24} />
+                      </div>
+                    </>
+                  )}
+                  <div className="absolute top-3 right-3">
+                    <span className="px-2 py-1 bg-primary text-white text-xs font-medium rounded-full">
+                      {cert.platform}
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-dark dark:text-white font-medium">
+                <div className="p-4">
+                  <h3 className="text-dark dark:text-white font-medium text-sm line-clamp-2 mb-2">
                     {cert.name}
                   </h3>
-                  <p className="text-sm text-muted dark:text-darklink">
-                    {cert.provider} · {cert.year}
+                  <p className="text-muted dark:text-darklink text-xs">
+                    {cert.year}
                   </p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
